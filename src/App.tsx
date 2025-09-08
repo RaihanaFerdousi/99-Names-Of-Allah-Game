@@ -103,7 +103,7 @@ function App() {
           className="fixed bottom-6 right-6 font-bold card-gradient text-teal-700 px-5 py-3 rounded-full text-xs transition-all duration-300 shadow-xl hover:scale-110 backdrop-blur-sm border border-amber-400"
           title="Reset all progress"
         >
-          Restart
+          Reset
         </button>
       )}
     </div>

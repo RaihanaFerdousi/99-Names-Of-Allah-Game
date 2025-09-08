@@ -1,6 +1,6 @@
 import React from 'react';
 import { names } from '../data/names';
-import { SearchIcon, Heart } from 'lucide-react';
+import { Heart, SearchIcon } from 'lucide-react';
 
 interface SearchModeProps {
   searchQuery: string;
@@ -25,7 +25,7 @@ export const SearchMode: React.FC<SearchModeProps> = ({
     <div className="max-w-6xl mx-auto px-6 py-12">
       {/* Search input */}
       <div className="relative mb-12">
-        <SearchIcon className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
+        <SearchIcon className="absolute left-6 top-1/2 transform -translate-y-1/2 w-6 h-6" />
         <input
           type="text"
           placeholder="Search by Arabic, transliteration, or meaning..."
