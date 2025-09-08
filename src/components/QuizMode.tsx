@@ -193,14 +193,14 @@ export const QuizMode: React.FC<QuizModeProps> = ({
             {currentQuestion < questions.length - 1 ? (
               <button
                 onClick={nextQuestion}
-                className="text-white px-10 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
+                className="border px-10 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
               >
                 Next Question →
               </button>
             ) : (
               <button
                 onClick={restartQuiz}
-                className="text-white px-10 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
+                className="border px-10 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
               >
                 🎯 Start New Quiz
               </button>
