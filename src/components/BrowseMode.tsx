@@ -36,7 +36,7 @@ export const BrowseMode: React.FC<BrowseModeProps> = ({
           className="mx-auto animate-slideIn"
         />
 
-        {/* Navigation arrows */}
+        {/* Navigation */}
         <button
           onClick={onPrevious}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 bg-white/90 backdrop-blur-sm shadow-2xl rounded-full p-4 hover:bg-white transition-all duration-300 border border-amber-200 hover:scale-110 hover:shadow-xl"
@@ -54,7 +54,7 @@ export const BrowseMode: React.FC<BrowseModeProps> = ({
         </button>
       </div>
 
-      {/* Progress indicator */}
+      {/* Progress */}
       <div className="mt-12 text-center">
         <div className="flex justify-center items-center gap-4 mb-4">
           <span className="text-lg text-gray-600 font-medium">Progress:</span>
@@ -68,7 +68,6 @@ export const BrowseMode: React.FC<BrowseModeProps> = ({
         </div>
       </div>
 
-      {/* Keyboard hints */}
       <div className="mt-8 text-center">
         <div className="inline-flex items-center gap-6 bg-white/70 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg border border-gray-200">
           <div className="flex items-center gap-2">

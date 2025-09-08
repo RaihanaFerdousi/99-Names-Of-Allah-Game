@@ -31,6 +31,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium mb-3 sm:mb-4">The 99 Beautiful Names of Allah</p>
           
+          {/* Learnt Progress Bar */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4">
             <span className="bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 px-4 sm:px-6 py-1 sm:py-2 rounded-full text-sm sm:text-base font-bold shadow-lg border border-emerald-200">
               {learnedCount}/99 Learned

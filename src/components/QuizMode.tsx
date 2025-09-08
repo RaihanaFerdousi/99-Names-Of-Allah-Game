@@ -20,7 +20,6 @@ export const QuizMode: React.FC<QuizModeProps> = ({
     correct: string;
   }>>([]);
 
-  // Generate quiz questions
   useEffect(() => {
     const generateQuestions = () => {
       const shuffledNames = [...names].sort(() => Math.random() - 0.5).slice(0, 10);
@@ -69,7 +68,6 @@ export const QuizMode: React.FC<QuizModeProps> = ({
     setCurrentQuestion(0);
     setSelectedAnswer(null);
     setShowResult(false);
-    // Regenerate questions
     const generateQuestions = () => {
       const shuffledNames = [...names].sort(() => Math.random() - 0.5).slice(0, 10);
       
@@ -101,37 +99,38 @@ export const QuizMode: React.FC<QuizModeProps> = ({
   const isCorrect = selectedAnswer === question.correct;
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
+    <div className="max-w-xs sm:max-w-md md:max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      
       {/* Quiz header */}
-      <div className="text-center mb-12">
-        <div className="flex justify-center items-center gap-6 mb-6">
-          <span className="bg-gradient-to-r from-blue-100 to-blue-50 text-blue-800 px-6 py-3 rounded-full text-lg font-bold shadow-lg border border-blue-200">
+      <div className="text-center mb-8 sm:mb-12">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+          <span className="bg-gradient-to-r from-blue-100 to-blue-50 text-blue-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-bold shadow-lg border border-blue-200">
             Question {currentQuestion + 1}/10
           </span>
-          <span className="bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 px-6 py-3 rounded-full text-lg font-bold flex items-center gap-2 shadow-lg border border-emerald-200">
-            <Trophy className="w-5 h-5" />
+          <span className="bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-bold flex items-center gap-2 shadow-lg border border-emerald-200">
+            <Trophy className="w-4 h-4 sm:w-5 sm:h-5" />
             Score: {score}
           </span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-4 max-w-lg mx-auto shadow-inner">
+        <div className="w-full bg-gray-200 rounded-full h-3 sm:h-4 max-w-sm sm:max-w-lg mx-auto shadow-inner">
           <div 
-            className="progress-bar h-4 rounded-full transition-all duration-500"
+            className="progress-bar h-3 sm:h-4 rounded-full transition-all duration-500"
             style={{ width: `${((currentQuestion + 1) / 10) * 100}%` }}
           ></div>
         </div>
       </div>
 
       {/* Question */}
-      <div className="card-gradient rounded-3xl overflow-hidden mb-12 animate-slideIn">
-        <div className="text-white px-8 py-8 text-center">
-          <h2 className="text-4xl arabic-text mb-4">
+      <div className="card-gradient rounded-3xl overflow-hidden mb-8 sm:mb-12 animate-slideIn">
+        <div className="text-white px-6 sm:px-8 py-6 sm:py-8 text-center">
+          <h2 className="text-3xl sm:text-4xl arabic-text mb-2 sm:mb-4">
             {question.name.arabic}
           </h2>
-          <p className="text-2xl transliteration-text">{question.name.transliteration}</p>
+          <p className="text-xl sm:text-2xl transliteration-text">{question.name.transliteration}</p>
         </div>
         
-        <div className="p-8 text-center geometric-pattern">
-          <p className="text-xl text-gray-700 mb-8 font-semibold">What does this beautiful name mean?</p>
+        <div className="p-6 sm:p-8 text-center geometric-pattern">
+          <p className="text-base sm:text-xl text-gray-700 mb-6 sm:mb-8 font-semibold">What does this beautiful name mean?</p>
           
           <div className="space-y-4">
             {question.options.map((option, index) => (
@@ -139,7 +138,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                 key={index}
                 onClick={() => !showResult && handleAnswer(option)}
                 disabled={showResult}
-                className={`w-full p-6 rounded-2xl text-left font-semibold transition-all duration-300 transform hover:scale-102 ${
+                className={`w-full p-4 sm:p-6 rounded-2xl text-left font-semibold transition-all duration-300 transform hover:scale-102 ${
                   !showResult
                     ? 'bg-white hover:bg-gray-50 text-gray-800 shadow-lg border border-gray-200 hover:shadow-xl'
                     : option === question.correct
@@ -150,14 +149,14 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-lg">{option}</span>
+                  <span className="text-base sm:text-lg">{option}</span>
                   {showResult && (
                     <>
                       {option === question.correct && (
-                        <CheckCircle className="w-6 h-6 text-green-600" />
+                        <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                       )}
                       {selectedAnswer === option && option !== question.correct && (
-                        <XCircle className="w-6 h-6 text-red-600" />
+                        <XCircle className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
                       )}
                     </>
                   )}
@@ -171,36 +170,36 @@ export const QuizMode: React.FC<QuizModeProps> = ({
       {/* Result and navigation */}
       {showResult && (
         <div className="text-center">
-          <div className={`inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold mb-8 text-lg shadow-xl ${
+          <div className={`inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold mb-6 sm:mb-8 text-sm sm:text-lg shadow-xl ${
             isCorrect 
               ? 'bg-gradient-to-r from-green-100 to-green-50 text-green-800 border border-green-300' 
               : 'bg-gradient-to-r from-red-100 to-red-50 text-red-800 border border-red-300'
           }`}>
             {isCorrect ? (
               <>
-                <CheckCircle className="w-6 h-6" />
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                 Excellent! ✨
               </>
             ) : (
               <>
-                <XCircle className="w-6 h-6" />
+                <XCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                 Not quite right
               </>
             )}
           </div>
 
-          <div className="space-x-6">
+          <div className="space-x-4 sm:space-x-6">
             {currentQuestion < questions.length - 1 ? (
               <button
                 onClick={nextQuestion}
-                className="border px-10 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
+                className="border px-8 sm:px-10 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-base sm:text-lg"
               >
                 Next Question →
               </button>
             ) : (
               <button
                 onClick={restartQuiz}
-                className="border px-10 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
+                className="border px-8 sm:px-10 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-base sm:text-lg"
               >
                 🎯 Start New Quiz
               </button>
