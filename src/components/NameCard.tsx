@@ -54,7 +54,7 @@ export const NameCard: React.FC<NameCardProps> = ({
             <div className="text-center animate-slideIn">
               <p className="text-gray-600 mb-4 text-base sm:text-lg">Click to reveal the beautiful meaning</p>
               <div className="reveal-gradient relative w-full h-12 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:animate-glow transition-all duration-300 shadow-lg sm:shadow-xl">
-                <span className="text-white font-bold text-base sm:text-lg tracking-wide">Tap to reveal</span>
+                <span className="text-white font-bold text-base sm:text-lg tracking-wide">Tap To Reveal</span>
               </div>
             </div>
           ) : (

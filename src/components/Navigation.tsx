@@ -9,7 +9,6 @@ interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({
-  currentMode,
   onModeChange,
   learnedCount
 }) => {
